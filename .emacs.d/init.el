@@ -69,6 +69,10 @@
   :config
   (whole-line-or-region-global-mode))
 
+(use-package company
+  :ensure t
+  :hook (after-init . global-company-mode))
+
 (defvar newline-and-indent t)
 
 (defun open-next-line (arg)
