@@ -104,6 +104,8 @@
 (global-set-key (kbd "M-i") 'backward-paragraph)
 (global-set-key (kbd "C-M-j") 'backward-sexp)
 (global-set-key (kbd "C-M-l") 'forward-sexp)
+(global-set-key (kbd "M-[") 'beginning-of-buffer)
+(global-set-key (kbd "M-]") 'end-of-buffer)
 
 (global-set-key (kbd "C-<return>") 'open-next-line)
 (global-set-key (kbd "S-<return>") 'open-previous-line)
