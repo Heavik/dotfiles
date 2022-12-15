@@ -14,6 +14,8 @@
 (setq auto-save-list-files nil)
 (setq auto-save-default nil)
 
+(recentf-mode 1)
+
 (unless (eq (frame-parameter nil 'fullscreen) 'maximized)
   (toggle-frame-maximized))
 
@@ -115,6 +117,7 @@
 (global-set-key (kbd "M-n") 'kill-word)
 (global-set-key (kbd "C-M-n") 'kill-sexp)
 (global-set-key (kbd "C-;") 'recenter-top-bottom)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
 ;; END Key bindings
 
 ;; Toggle window split
