@@ -148,3 +148,7 @@
 
 (global-set-key (kbd "C-x |") 'toggle-window-split)
 ;; End toggle window split
+
+;; Change place of the custom file
+(setq custom-file (locate-user-emacs-file "custom-vars.el"))
+(load custom-file 'noerror 'nomessage)
