@@ -16,6 +16,10 @@
 
 (recentf-mode 1)
 
+;; Save minibuffers history
+(setq history-length 30)
+(savehist-mode 1)
+
 ;; Auto revert buffers
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t)
