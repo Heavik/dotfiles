@@ -81,6 +81,8 @@
 
 (use-package company
   :ensure t
+  :config
+  (setq company-dabbrev-downcase nil)
   :hook (after-init . global-company-mode))
 
 (defvar newline-and-indent t)
