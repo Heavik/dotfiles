@@ -65,7 +65,9 @@
   :ensure t
   :config
   (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t)
+	doom-themes-enable-italic t
+	doom-gruvbox-dark-variant "soft")
+
   (load-theme 'doom-gruvbox t))
 
 (set-face-attribute 'default nil :font "Fira Code Retina" :height 160)
