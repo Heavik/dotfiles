@@ -105,29 +105,29 @@
 ;; Key bindings
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (global-set-key [remap list-buffers] 'ibuffer)
-(global-set-key (kbd "C-j") 'backward-char)
-(global-set-key (kbd "C-l") 'forward-char)
-(global-set-key (kbd "C-k") 'next-line)
-(keyboard-translate ?\C-i ?\H-i)
-(global-set-key [?\H-i] 'previous-line)
-(global-set-key (kbd "M-j") 'backward-word)
-(global-set-key (kbd "M-l") 'forward-word)
-(global-set-key (kbd "M-k") 'forward-paragraph)
-(global-set-key (kbd "M-i") 'backward-paragraph)
-(global-set-key (kbd "C-M-j") 'backward-sexp)
-(global-set-key (kbd "C-M-l") 'forward-sexp)
-(global-set-key (kbd "M-[") 'beginning-of-buffer)
-(global-set-key (kbd "M-]") 'end-of-buffer)
+;;(global-set-key (kbd "C-j") 'backward-char)
+;;(global-set-key (kbd "C-l") 'forward-char)
+;;(global-set-key (kbd "C-k") 'next-line)
+;;(keyboard-translate ?\C-i ?\H-i)
+;;(global-set-key [?\H-i] 'previous-line)
+;;(global-set-key (kbd "M-j") 'backward-word)
+;;(global-set-key (kbd "M-l") 'forward-word)
+;;(global-set-key (kbd "M-k") 'forward-paragraph)
+;;(global-set-key (kbd "M-i") 'backward-paragraph)
+;;(global-set-key (kbd "C-M-j") 'backward-sexp)
+;;(global-set-key (kbd "C-M-l") 'forward-sexp)
+;;(global-set-key (kbd "M-[") 'beginning-of-buffer)
+;;(global-set-key (kbd "M-]") 'end-of-buffer)
 
-(global-set-key (kbd "C-<return>") 'open-next-line)
-(global-set-key (kbd "S-<return>") 'open-previous-line)
-(global-set-key (kbd "M-u") 'back-to-indentation)
-(global-set-key (kbd "M-o") 'move-end-of-line)
-(global-set-key (kbd "C-n") 'kill-line)
-(global-set-key (kbd "M-n") 'kill-word)
-(global-set-key (kbd "C-M-n") 'kill-sexp)
-(global-set-key (kbd "C-;") 'recenter-top-bottom)
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+;;(global-set-key (kbd "C-<return>") 'open-next-line)
+;;(global-set-key (kbd "S-<return>") 'open-previous-line)
+;;(global-set-key (kbd "M-u") 'back-to-indentation)
+;;(global-set-key (kbd "M-o") 'move-end-of-line)
+;;(global-set-key (kbd "C-n") 'kill-line)
+;;(global-set-key (kbd "M-n") 'kill-word)
+;;(global-set-key (kbd "C-M-n") 'kill-sexp)
+;;(global-set-key (kbd "C-;") 'recenter-top-bottom)
+;;(global-set-key (kbd "C-x C-r") 'recentf-open-files)
 ;; END Key bindings
 
 ;; Toggle window split
@@ -164,17 +164,17 @@
 (load custom-file 'noerror 'nomessage)
 
 ;; OCaml Setup
-(use-package tuareg
-  :ensure t
-  :mode (("\\.ocamlinit\\'" . tuareg-mode)))
+;;(use-package tuareg
+;;  :ensure t
+;;  :mode (("\\.ocamlinit\\'" . tuareg-mode)))
 
-(use-package dune
-  :ensure t)
+;;(use-package dune
+;;  :ensure t)
 
-(use-package merlin
-  :ensure t
-  :config
-  (add-hook 'tuareg-mode-hook #'merlin-mode)
-  (add-hook 'merlin-mode-hook #'company-mode))
+;;(use-package merlin
+;;  :ensure t
+;;  :config
+;;  (add-hook 'tuareg-mode-hook #'merlin-mode)
+;;  (add-hook 'merlin-mode-hook #'company-mode))
 ;; End OCaml Setup
 
