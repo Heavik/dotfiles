@@ -87,6 +87,32 @@
   (setq company-dabbrev-downcase nil)
   :hook (after-init . global-company-mode))
 
+;;tree-sitter configuration
+
+(setq treesit-language-source-alist
+      '((c "https://github.com/tree-sitter/tree-sitter-c")
+	(cpp "https://github.com/tree-sitter/tree-sitter-cpp")
+	(python "https://github.com/tree-sitter/tree-sitter-python")
+	(go "https://github.com/tree-sitter/tree-sitter-go")
+	(gomod "https://github.com/camdencheek/tree-sitter-go-mod")))
+
+(defun my/treesit-install-language-grammar (lang)
+  (unless (treesit-language-available-p lang)
+    (treesit-install-language-grammar lang)))
+
+(mapc #'my/treesit-install-language-grammar (mapcar #'car treesit-language-source-alist))
+
+(add-to-list 'auto-mode-alist '("\\.c\\'" . c-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.cc\\'" . c++-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.hpp\\'" . c++-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.cpp\\'" . c++-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
+(add-to-list 'auto-mode-alist '("\\go.mod\\'" . go-mod-ts-mode))
+
+;;END tree-sitter configuration
+
 (defvar newline-and-indent t)
 
 (defun open-next-line (arg)
@@ -107,29 +133,27 @@
 ;; Key bindings
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (global-set-key [remap list-buffers] 'ibuffer)
-;;(global-set-key (kbd "C-j") 'backward-char)
-;;(global-set-key (kbd "C-l") 'forward-char)
-;;(global-set-key (kbd "C-k") 'next-line)
-;;(keyboard-translate ?\C-i ?\H-i)
-;;(global-set-key [?\H-i] 'previous-line)
-;;(global-set-key (kbd "M-j") 'backward-word)
-;;(global-set-key (kbd "M-l") 'forward-word)
-;;(global-set-key (kbd "M-k") 'forward-paragraph)
-;;(global-set-key (kbd "M-i") 'backward-paragraph)
-;;(global-set-key (kbd "C-M-j") 'backward-sexp)
-;;(global-set-key (kbd "C-M-l") 'forward-sexp)
-;;(global-set-key (kbd "M-[") 'beginning-of-buffer)
-;;(global-set-key (kbd "M-]") 'end-of-buffer)
+(global-set-key (kbd "M-j") 'backward-char)
+(global-set-key (kbd "M-l") 'forward-char)
+(global-set-key (kbd "M-k") 'next-line)
+(global-set-key (kbd "M-i") 'previous-line)
+(global-set-key (kbd "M-u") 'backward-word)
+(global-set-key (kbd "M-o") 'forward-word)
+(global-set-key (kbd "C-M-u") 'back-to-indentation)
+(global-set-key (kbd "C-M-o") 'move-end-of-line)
 
-;;(global-set-key (kbd "C-<return>") 'open-next-line)
-;;(global-set-key (kbd "S-<return>") 'open-previous-line)
-;;(global-set-key (kbd "M-u") 'back-to-indentation)
-;;(global-set-key (kbd "M-o") 'move-end-of-line)
-;;(global-set-key (kbd "C-n") 'kill-line)
-;;(global-set-key (kbd "M-n") 'kill-word)
-;;(global-set-key (kbd "C-M-n") 'kill-sexp)
-;;(global-set-key (kbd "C-;") 'recenter-top-bottom)
-;;(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+(global-set-key (kbd "C-M-j") 'backward-sexp)
+(global-set-key (kbd "C-M-l") 'forward-sexp)
+(global-set-key (kbd "M-[") 'beginning-of-buffer)
+(global-set-key (kbd "M-]") 'end-of-buffer)
+
+(global-set-key (kbd "C-<return>") 'open-next-line)
+(global-set-key (kbd "S-<return>") 'open-previous-line)
+(global-set-key (kbd "C-n") 'kill-line)
+(global-set-key (kbd "M-n") 'kill-word)
+(global-set-key (kbd "C-M-n") 'kill-sexp)
+(global-set-key (kbd "C-;") 'recenter-top-bottom)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
 ;; END Key bindings
 
 ;; Toggle window split
@@ -179,4 +203,3 @@
 ;;  (add-hook 'tuareg-mode-hook #'merlin-mode)
 ;;  (add-hook 'merlin-mode-hook #'company-mode))
 ;; End OCaml Setup
-
