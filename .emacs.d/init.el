@@ -144,8 +144,13 @@
 
 (global-set-key (kbd "C-M-j") 'backward-sexp)
 (global-set-key (kbd "C-M-l") 'forward-sexp)
-(global-set-key (kbd "M-[") 'beginning-of-buffer)
-(global-set-key (kbd "M-]") 'end-of-buffer)
+(global-set-key (kbd "C-M-k") 'down-list)
+(global-set-key (kbd "C-M-i") 'up-list)
+(define-key emacs-lisp-mode-map (kbd "C-M-i") 'up-list)
+(global-set-key (kbd "M-[") 'backward-paragraph)
+(global-set-key (kbd "M-]") 'forward-paragraph)
+(global-set-key (kbd "M-{") 'beginning-of-buffer)
+(global-set-key (kbd "M-}") 'end-of-buffer)
 
 (global-set-key (kbd "C-<return>") 'open-next-line)
 (global-set-key (kbd "S-<return>") 'open-previous-line)
