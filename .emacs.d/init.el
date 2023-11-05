@@ -83,6 +83,9 @@
 
 (use-package company
   :ensure t
+  :bind (:map company-active-map
+	      ("M-i" . company-select-previous-or-abort)
+	      ("M-k" . company-select-next-or-abort))
   :config
   (setq company-dabbrev-downcase nil)
   :hook (after-init . global-company-mode))
