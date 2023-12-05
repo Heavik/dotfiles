@@ -132,7 +132,17 @@
   (open-line arg)
   (when newline-and-indent
     (indent-according-to-mode)))
-   
+
+(defun my/move-begin-of-line (arg)
+  (interactive "p")
+  (let ((column (current-column))
+        (indent (current-indentation)))
+    (when (and (> column 0) (= column indent))
+      (move-beginning-of-line arg))
+    (when (not (= column indent))
+      (back-to-indentation))
+    ))
+
 ;; Key bindings
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (global-set-key [remap list-buffers] 'ibuffer)
@@ -142,7 +152,7 @@
 (global-set-key (kbd "M-i") 'previous-line)
 (global-set-key (kbd "M-u") 'backward-word)
 (global-set-key (kbd "M-o") 'forward-word)
-(global-set-key (kbd "C-M-u") 'back-to-indentation)
+(global-set-key (kbd "C-M-u") 'my/move-begin-of-line)
 (global-set-key (kbd "C-M-o") 'move-end-of-line)
 
 (global-set-key (kbd "C-M-j") 'backward-sexp)
