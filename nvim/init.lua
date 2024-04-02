@@ -11,6 +11,8 @@ require("config/plugins/treesitter")
 require("config/plugins/autocompletion")
 require("config/plugins/autopairs")
 require("config/plugins/comment")
+require("config/plugins/telescope")
+require("config/plugins/status-line")
 
 -- LSP
 require("config/plugins/lsp/mason")

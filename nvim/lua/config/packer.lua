@@ -10,6 +10,13 @@ return require("packer").startup(function(use)
 	-- Gruvbox Material Theme
 	use("sainnhe/gruvbox-material")
 
+	use("nvim-tree/nvim-web-devicons")
+	-- LuaLine mode line
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	})
+
 	use("szw/vim-maximizer") -- maximizes and restores current window
 
 	use("tpope/vim-surround")
