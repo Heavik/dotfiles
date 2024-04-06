@@ -1,4 +1,4 @@
-vim.cmd("language en_US")
+vim.cmd(":let $LANG='en'")
 
 vim.opt.number = true
 
