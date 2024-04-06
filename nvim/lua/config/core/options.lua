@@ -1,3 +1,5 @@
+vim.cmd("language en_US")
+
 vim.opt.number = true
 
 vim.opt.tabstop = 4
