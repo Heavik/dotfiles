@@ -1,5 +1,5 @@
--- Packer Setup
-require("config/packer")
+-- Lazy.nvim setup
+require("config/lazy")
 
 -- Core Settings
 require("config/core/options")
