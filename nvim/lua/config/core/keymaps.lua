@@ -3,6 +3,11 @@ vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Lexplore, { desc = "Toggle [E]xplorer" })
 
+-- Clipboard yank and paste
+vim.keymap.set("n", "<leader>y", '"+y', { desc = "[Y]ank to Clipboard" })
+vim.keymap.set("n", "<leader>p", '"+p', { desc = "[P]aste from Clipboard after cursor" })
+vim.keymap.set("n", "<leader>P", '"+P', { desc = "[P]aste from Clipboard before cursor" })
+
 -- window management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "[S]plit Window [V]ertically" })
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "[S]plit Window [H]orizontally" })
