@@ -57,7 +57,6 @@ lspconfig.gopls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
-
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
@@ -80,7 +79,7 @@ lspconfig["lua_ls"].setup({
 })
 
 -- configure typescript lsp server
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
 	init_options = { hostinfo = "neovim" },
 	cmd = { "typescript-language-server", "--stdio" },
 	filetypes = {
