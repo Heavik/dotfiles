@@ -44,6 +44,14 @@
 (setq auto-save-list-file-prefix (expand-file-name "tmp/auto-saves/sessions/" user-emacs-directory)
       auto-save-file-name-transforms `((".*" ,(expand-file-name "tmp/auto-saves/" user-emacs-directory) t)))
 
+;; IDO-mode configuration
+(setq ido-enable-flex-matching t
+      ido-everywhere t
+      ido-create-new-buffer 'always)
+
+(setq-default confirm-nonexistent-file-or-buffer nil)
+(ido-mode 1)
+
 ;; Set editor font
 (set-face-attribute 'default nil :font "FiraMono Nerd Font Medium:style=Medium,Regular" :height 120)
 
