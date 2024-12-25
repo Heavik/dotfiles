@@ -93,6 +93,8 @@
 (setq treesit-language-source-alist
       '((c "https://github.com/tree-sitter/tree-sitter-c")
 	(cpp "https://github.com/tree-sitter/tree-sitter-cpp")
+	(go "https://github.com/tree-sitter/tree-sitter-go")
+	(gomod "https://github.com/camdencheek/tree-sitter-go-mod")
 	(javascript "https://github.com/tree-sitter/tree-sitter-javascript")))
 
 (defun my/treesit-install-language-grammar (lang)
@@ -104,8 +106,11 @@
 (add-to-list 'major-mode-remap-alist '(c-mode . c-ts-mode))
 (add-to-list 'major-mode-remap-alist '(c++-mode . c++-ts-mode))
 (add-to-list 'major-mode-remap-alist '(javascript-mode . js-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
+(add-to-list 'auto-mode-alist '("\\go.mod\\'" . go-mod-ts-mode))
 
 (setq c-ts-mode-indent-offset 4)
+
 ;; END TRee-sitter configuration
 
 ;; Set up custom file location
