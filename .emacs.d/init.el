@@ -60,6 +60,15 @@
 (add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
+(use-package diminish
+  :ensure t)
+
+(use-package whole-line-or-region
+  :ensure t
+  :diminish whole-line-or-region-local-mode
+  :config
+  (whole-line-or-region-global-mode))
+
 (use-package doom-themes
   :ensure t
   :config
