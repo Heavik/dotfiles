@@ -84,6 +84,11 @@
 	company-minimum-prefix-length 2)
   :hook (after-init . global-company-mode))
 
+(use-package move-text
+  :ensure t
+  :bind (("M-p" . move-text-up)
+	 ("M-n" . move-text-down)))
+
 (use-package slime
   :ensure t
   :config
