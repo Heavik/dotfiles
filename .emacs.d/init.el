@@ -117,6 +117,39 @@
 
 (global-set-key (kbd "C-,") 'mycustom/duplicate-line)
 
+;; BEGIN Custom move to beginning of the line
+(defvar newline-and-indent t)
+
+(defun open-next-line (arg)
+  (interactive "p")
+  (end-of-line)
+  (open-line arg)
+  (forward-line 1)
+  (when newline-and-indent
+    (indent-according-to-mode)))
+
+(defun open-previous-line (arg)
+  (interactive "p")
+  (beginning-of-line)
+  (open-line arg)
+  (when newline-and-indent
+    (indent-according-to-mode)))
+
+(defun mycustom/move-begin-of-line (arg)
+  (interactive "p")
+  (let ((column (current-column))
+        (indent (current-indentation)))
+    (when (and (> column 0) (= column indent))
+      (move-beginning-of-line arg))
+    (when (not (= column indent))
+      (back-to-indentation))
+    ))
+
+(global-set-key [remap move-beginning-of-line] 'mycustom/move-begin-of-line)
+;; END Custom move to beginning of the line
+
+(global-set-key [remap list-buffers] 'ibuffer)
+
 ;; BEGIN Tree-sitter configuration
 (setq treesit-language-source-alist
       '((c "https://github.com/tree-sitter/tree-sitter-c")
