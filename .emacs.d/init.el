@@ -149,6 +149,7 @@
 ;; END Custom move to beginning of the line
 
 (global-set-key [remap list-buffers] 'ibuffer)
+(global-set-key (kbd "M-o") 'other-window)
 
 ;; BEGIN Tree-sitter configuration
 (setq treesit-language-source-alist
