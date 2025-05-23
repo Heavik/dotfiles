@@ -64,9 +64,6 @@ return require("lazy").setup({
 	{"neovim/nvim-lspconfig"}, -- easily configure language servers
 	{"hrsh7th/cmp-nvim-lsp"}, -- for autocompletion
 
-	{"jose-elias-alvarez/null-ls.nvim"}, -- configure formatters & linters
-	{"jayp0521/mason-null-ls.nvim"}, -- bridges gap b/w mason & null-ls
-
 	-- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",

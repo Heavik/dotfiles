@@ -12,13 +12,6 @@ if not mason_lspconfig_status then
     return
 end
 
--- import mason-null-ls plugin safely
-local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
-if not mason_null_ls_status then
-    print("mason_null_ls is not installed")
-    return
-end
-
 -- enable mason
 mason.setup()
 
@@ -29,13 +22,4 @@ mason_lspconfig.setup({
     },
     -- auto-install configured servers (with lspconfig)
     automatic_installation = true, -- not the same as ensure_installed
-})
-
-mason_null_ls.setup({
-    -- list of formatters & linters for mason to install
-    ensure_installed = {
-        "stylua" -- lua formatter
-    },
-    -- auto-install configured formatters & linters (with null-ls)
-    automatic_installation = true,
 })

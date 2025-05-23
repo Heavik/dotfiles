@@ -17,4 +17,3 @@ require("config/plugins/status-line")
 -- LSP
 require("config/plugins/lsp/mason")
 require("config/plugins/lsp/lspconfig")
-require("config/plugins/lsp/null-ls")
