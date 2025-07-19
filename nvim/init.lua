@@ -27,6 +27,8 @@ vim.opt.clipboard = "unnamedplus,unnamed"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.keymap.set("n", "Y", "y$", { desc = "Yank to end of line" })
+
 vim.keymap.set("i", "<C-u>", "<C-g>u<C-u>")
 vim.keymap.set("i", "<C-w>", "<C-g>u<C-w>")
 
