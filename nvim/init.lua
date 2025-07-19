@@ -51,10 +51,10 @@ vim.keymap.set(
 )
 
 -- Window movement
-vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Switch to left window" })
-vim.keymap.set("n", "<leader>j", "<C-w>j", { desc = "Switch to bottom window" })
-vim.keymap.set("n", "<leader>k", "<C-w>k", { desc = "Switch to top window" })
-vim.keymap.set("n", "<leader>l", "<C-w>l", { desc = "Switch to right window" })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Switch to left window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Switch to bottom window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Switch to top window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Switch to right window" })
 
 -- tabs management
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = "[Open] new [T]ab" })
