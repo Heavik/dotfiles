@@ -49,6 +49,7 @@ vim.keymap.set("n", "<leader>e", vim.cmd.Lexplore, { desc = "Toggle [E]xplorer" 
 
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete buffer" })
 
 vim.keymap.set("n", "<M-j>", ":m .+1<CR>==", { desc = "Move line down" })
 vim.keymap.set("n", "<M-k>", ":m .-2<CR>==", { desc = "Move line up" })
