@@ -1,13 +1,15 @@
 vim.cmd(":let $LANG='en'")
 
 vim.opt.number = true
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 8
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-
 vim.opt.smartindent = true
+vim.opt.autoindent = true
 
 vim.opt.wrap = false
 
@@ -17,11 +19,22 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
+vim.opt.showmatch = true
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.clipboard = "unnamedplus,unnamed"
+
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
+vim.opt.autoread = true
+vim.opt.autowrite = false
+
+vim.opt.autochdir = false
+vim.opt.path:append("**")
+vim.opt.modifiable = true
+vim.opt.encoding = "UTF-8"
 
 -------- Key Bindings -----
 vim.g.mapleader = " "
@@ -33,6 +46,19 @@ vim.keymap.set("i", "<C-u>", "<C-g>u<C-u>")
 vim.keymap.set("i", "<C-w>", "<C-g>u<C-w>")
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Lexplore, { desc = "Toggle [E]xplorer" })
+
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
+
+vim.keymap.set("n", "<M-j>", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<M-k>", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
+
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
 
 -- window management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "[S]plit Window [V]ertically" })
