@@ -153,13 +153,13 @@
 
 ;; BEGIN Tree-sitter configuration
 (setq treesit-language-source-alist
-      '((c "https://github.com/tree-sitter/tree-sitter-c")
+      '((c "https://github.com/tree-sitter/tree-sitter-c" "v0.23.6")
 	(cpp "https://github.com/tree-sitter/tree-sitter-cpp")
-	(go "https://github.com/tree-sitter/tree-sitter-go")
-	(gomod "https://github.com/camdencheek/tree-sitter-go-mod")
-	(rust "https://github.com/tree-sitter/tree-sitter-rust")
-	(python "https://github.com/tree-sitter/tree-sitter-python")
-	(javascript "https://github.com/tree-sitter/tree-sitter-javascript")))
+	(go "https://github.com/tree-sitter/tree-sitter-go" "v0.23.4" nil nil nil)
+	(gomod "https://github.com/camdencheek/tree-sitter-go-mod" "v1.0.2" nil nil nil)
+	(rust "https://github.com/tree-sitter/tree-sitter-rust" "v0.23.3" nil nil nil)
+	(python "https://github.com/tree-sitter/tree-sitter-python" "v0.23.6" nil nil nil)
+	(javascript "https://github.com/tree-sitter/tree-sitter-javascript" "v0.23.1" nil nil nil)))
 
 (defun my/treesit-install-language-grammar (lang)
   (unless (treesit-language-available-p lang)
