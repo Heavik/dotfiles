@@ -72,14 +72,16 @@
   :diminish whole-line-or-region-local-mode
   :config
   (whole-line-or-region-global-mode))
-
-(use-package doom-themes
-  :ensure t
-  :config
-  (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t)
 	
-  (load-theme 'doom-material-dark t))
+(use-package ef-themes
+  :ensure t
+  :init
+  (ef-themes-take-over-modus-themes-mode 1)
+  :config
+  (setq modus-themes-mixed-fonts t)
+  (setq modus-themes-italic-constructs t)
+
+  (modus-themes-load-theme 'ef-dream))
 
 (use-package dabbrev
   :bind (("M-/" . dabbrev-completion)
