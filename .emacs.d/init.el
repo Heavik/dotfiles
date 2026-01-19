@@ -91,14 +91,18 @@
   :ensure t
   :init
   (global-corfu-mode)
-  :config
-  (setq corfu-auto t))
-
+  :hook
+  ((prog-mode text-mode) . (lambda () (setq-local corfu-auto t)))
+  :custom
+  (corfu-cycle t)
+  (corfu-preview-current nil))
+  
 (use-package cape
   :ensure t
   :init
-  (add-hook 'completion-at-point-functions #'cape-dabbrev)
+  (add-hook 'completion-at-point-functions #'cape-elisp-symbol)
   (add-hook 'completion-at-point-functions #'cape-keyword)
+  (add-hook 'completion-at-point-functions #'cape-dabbrev)
   (add-hook 'completion-at-point-functions #'cape-file))
 
 (use-package move-text
