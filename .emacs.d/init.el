@@ -60,6 +60,10 @@
 (add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
+(use-package emacs
+  :custom
+  (tab-always-indent 'complete))
+
 (use-package diminish
   :ensure t)
 
@@ -77,12 +81,23 @@
 	
   (load-theme 'doom-material-dark t))
 
-(use-package company
+(use-package dabbrev
+  :bind (("M-/" . dabbrev-completion)
+	 ("C-M-/" . dabbrev-expand)))
+
+(use-package corfu
   :ensure t
+  :init
+  (global-corfu-mode)
   :config
-  (setq company-dabbrev-downcase nil
-	company-minimum-prefix-length 2)
-  :hook (after-init . global-company-mode))
+  (setq corfu-auto t))
+
+(use-package cape
+  :ensure t
+  :init
+  (add-hook 'completion-at-point-functions #'cape-dabbrev)
+  (add-hook 'completion-at-point-functions #'cape-keyword)
+  (add-hook 'completion-at-point-functions #'cape-file))
 
 (use-package move-text
   :ensure t
