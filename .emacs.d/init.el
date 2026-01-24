@@ -100,7 +100,6 @@
 (use-package cape
   :ensure t
   :init
-  (add-hook 'completion-at-point-functions #'cape-elisp-symbol)
   (add-hook 'completion-at-point-functions #'cape-keyword)
   (add-hook 'completion-at-point-functions #'cape-dabbrev)
   (add-hook 'completion-at-point-functions #'cape-file))
