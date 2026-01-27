@@ -109,11 +109,6 @@
   :bind (("M-p" . move-text-up)
 	 ("M-n" . move-text-down)))
 
-(use-package slime
-  :ensure t
-  :config
-  (setq inferior-lisp-program (executable-find "sbcl")))
-
 (use-package eglot
   :ensure t
   :defer t
@@ -206,3 +201,8 @@
   (make-empty-file custom-file))
 
 (load custom-file)
+
+(setq local-init-file (locate-user-emacs-file "local-init.el"))
+
+(when (file-exists-p local-init-file)
+  (load local-init-file))
