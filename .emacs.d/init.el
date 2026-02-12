@@ -6,6 +6,8 @@
 
 (setq-default truncate-lines 1)
 
+(setq-default tab-width 4)
+
 (setq ring-bell-function 'ignore)
 
 (global-display-line-numbers-mode t) ;; Enable line numbers
