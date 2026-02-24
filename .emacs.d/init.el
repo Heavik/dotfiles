@@ -194,6 +194,12 @@
 
 (setq c-ts-mode-indent-offset 4)
 
+(add-hook 'go-ts-mode-hook
+		  (lambda ()
+		    (setq tab-width 4)
+		    (setq go-ts-mode-indent-offset 4)))
+
+
 ;; END TRee-sitter configuration
 
 ;; Set up custom file location
