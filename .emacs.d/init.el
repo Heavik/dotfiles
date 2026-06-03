@@ -86,7 +86,8 @@
   (modus-themes-load-theme 'ef-dream))
 
 (use-package dabbrev
-  :init (setq dabbrev-case-fold-search nil)
+  :custom
+  (dabbrev-case-fold-search nil)
   :bind (("M-/" . dabbrev-completion)
 	 ("C-M-/" . dabbrev-expand)))
 
